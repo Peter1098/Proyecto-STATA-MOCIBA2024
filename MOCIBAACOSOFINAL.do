@@ -1,10 +1,3 @@
-describe acosoCibernetico EDAD genero EducacionOriginal P7_4 P4_09
-tab acosoCibernetico
-tab EDAD
-tab genero
-tab EducacionOriginal 
-tab P7_4
-tab P4_09
 
 *Verificamos que tipo de datos son las variables antes de trabajar *
 describe P4_01 SEXO EDAD NIVEL P7_4 P4_09
@@ -69,9 +62,14 @@ tab contenido
 
 logit acosoCibernetico genero edad educacion tiempoLinea contenido
 
-predic acosoCibernetico_pro
+predict acosoCibernetico_pro
 
 gen= acosoEdad = acosoCibernetico*edad
  graph twoway ( scatter  acosoEdad tiempoLinea) (lfit acosoEdad tiempoLinea)
+
+browse acosoCibernetico genero edad educacion tiempoLinea contenido acosoCibernetico_pro
+
+
+
 
 
